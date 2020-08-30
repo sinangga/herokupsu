@@ -9,7 +9,8 @@ const download = require('download');
 //                                                 (modified by.sinangga)                                                           //
 //                                                                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-bot.start((ctx)=> {                                                                                                               //
+bot.hears('Mulai', ({ reply }) => {
+// bot.start((ctx)=> {                                                                                                               //
     ctx.replyWithVideo(                                                                                                             //
         {                                                                                                                           //
             source: "LOGO2.gif"                                                                                                  //
