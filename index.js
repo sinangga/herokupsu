@@ -9,7 +9,7 @@ const download = require('download')
 //                                                 (modified by.sinangga)                                                           //
 //                                                                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-bot.start((ctx) => ctx.replyWithPhoto({ source : 'LOGO2.gif' },
+bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
     {                                                                                                                              //
         reply_markup: {                                                                                                             //
             inline_keyboard: [                                                                                                      //
