@@ -9,20 +9,22 @@ const download = require('download')
 //                                                 (modified by.sinangga)                                                           //
 //                                                                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// bot.hears('Mulai', ({ reply }) => {
-bot.start((ctx)=> {                                                                                                               //
-    ctx.replyWithVideo(                                                                                                             //
-        {                                                                                                                           //
-            source: "LOGO2.gif"                                                                                                  //
-        },                                                                                                                          //
-    {                                                                                                                               //
+bot.start((ctx) => ctx.reply('==== BMKG PANGSUMA ====',
+    {                                                                                                                              //
         reply_markup: {                                                                                                             //
-            inline_keyboard : [                                                                                                     //
-                [{text: "MULAI", callback_data: "mulai"}]                                                                           //
+            inline_keyboard: [                                                                                                      //
+                [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
+                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],	//
+                [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
+                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],                                           		//
+                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],                                                  	//
+                [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
+                [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]
             ]                                                                                                                       //
         }                                                                                                                           //
-    })                                                                                                                              //                                                                                                                                    //
-})                                                                                                                                  //
+    })
+)                                                                                                                           //
 //                                                                                                                                  //
 //                                                                                                                                  //
 bot.action('mulai', (ctx)=>{                                                                                                        //
