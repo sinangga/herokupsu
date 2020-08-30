@@ -1,0 +1,14 @@
+{
+  "name": "heroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro-bot"
+  },
+  "author": "sinangga",
+  "license": "ISC",
+  "dependencies": {
+    "micro-bot": "^2.5.3"
+  }
+}
