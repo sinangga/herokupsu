@@ -1,7 +1,7 @@
 const { readFileSync } = require('fs')
 const { Composer } = require('micro-bot')
 const bot = new Composer()
-const download = require('download');
+const download = require('download')
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                                  //
