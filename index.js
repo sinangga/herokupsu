@@ -186,7 +186,7 @@ bot.action('harian', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI CUACA HARIAN')
     ctx.replyWithPhoto(
         {
-            source: "harian.png"
+            source: "harian.jpg"
         },
     {
         reply_markup: {
