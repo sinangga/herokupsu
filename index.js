@@ -9,7 +9,7 @@ const download = require('download')
 //                                                 (modified by.sinangga)                                                           //
 //                                                                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-bot.start((ctx) => ctx.reply('==== BMKG PANGSUMA ====',
+bot.start((ctx) => ctx.replyWithVideo({ source : 'LOGO2.gif' },
     {                                                                                                                              //
         reply_markup: {                                                                                                             //
             inline_keyboard: [                                                                                                      //
