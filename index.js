@@ -119,11 +119,11 @@ bot.action('karhutla', (ctx)=>{
         })
     ctx.replyWithPhoto(
         {
-            source: "hotspread.jpg"
+            source: "hotspread.png"
         })
     ctx.replyWithPhoto(
         {
-            source: "karhut.jpg"
+            source: "karhut.png"
         },
     {
         reply_markup: {
@@ -167,7 +167,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: "angin.jpg"
+            source: "angin.png"
         },
     {
         reply_markup: {
@@ -183,7 +183,7 @@ bot.action('harian', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI CUACA HARIAN')
     ctx.replyWithPhoto(
         {
-            source: "harian.jpg"
+            source: "harian.png"
         },
     {
         reply_markup: {
@@ -198,7 +198,7 @@ bot.action('tigahari', (ctx)=>{
     ctx.reply('BERIKUT ADALAH PRAKIRAAN CUACA TIGA HARI KE DEPAN')
     ctx.replyWithPhoto(
         {
-            source: "3hari.jpg" 
+            source: "3hari.png" 
         },                                                                                                                      //
     {                                                                                                                           //
         reply_markup: {                                                                                                         //
@@ -213,7 +213,7 @@ bot.action('mingguan', (ctx)=>{                                                 
     ctx.reply('BERIKUT ADALAH PRAKIRAAN CUACA SATU MINGGU KEDEPAN')                                                             //
     ctx.replyWithPhoto(
         {
-            source: "mingguan.jpg"
+            source: "mingguan.png"
         },
     {
         reply_markup: {
