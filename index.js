@@ -251,7 +251,7 @@ bot.action('buletin', (ctx)=>{
 bot.action('IKM', (ctx)=>{
     ctx.reply('SILAKAN MENGISI SURVEI KEPUASAN MASYARAKAT')
     ctx.reply('BUKA LINK YANG TERTERA DI BAWAH INI')
-    ctx.reply('COMING SOON',
+    ctx.reply('https://forms.gle/Px3f5v75XkuHHn5C9',
     {
         reply_markup: {
             inline_keyboard: [
