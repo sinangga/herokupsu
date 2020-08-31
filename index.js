@@ -3,82 +3,61 @@ const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                                  //
-//                                                  HEADER BOT TELEGRAM                                                             //
-//                                                 (modified by.sinangga)                                                           //
-//                                                                                                                                  //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//                                                                 //
+//              HEADER BOT TELEGRAM                                //
+//            (modified by.sinangga)                               //
+//                                                                 //
+/////////////////////////////////////////////////////////////////////
 bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
-    {                                                                                                                              //
-        reply_markup: {                                                                                                             //
-            inline_keyboard: [                                                                                                      //
+    {
+        reply_markup: {
+            inline_keyboard: [
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],	//
+                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],                                           		//
-                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],                                                  	//
+                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
+                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]
-            ]                                                                                                                       //
-        }                                                                                                                           //
+            ]
+        }
     })
-)                                                                                                                           //
-//                                                                                                                                  //
-//                                                                                                                                  //
-// bot.action('mulai', (ctx)=>{                                                                                                        //
-//     ctx.reply(' KLIK INFORMASI YANG ANDA INGINKAN ',                                                                                //
-//     {                                                                                                                               //
-//         reply_markup: {                                                                                                             //
-//             inline_keyboard: [                                                                                                      //
-//                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-//                 [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],	//
-//                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-//                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],                                           		//
-// 				[{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],                                                  	//
-//                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
-//                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
-//                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]
-//             ]                                                                                                                       //
-//         }                                                                                                                           //
-//     })                                                                                                                              // 
-// })                                                                                                                                  //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//						HARUS DISAMAKAN ANTARA ATAS DAN BAWAH !!!!
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                              //
-//                                                  SCRIPT BACK TO MENU                                                         //
-//                                                                                                                              //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-bot.action("menu", (ctx)=>{                                                                                                     //
-    ctx.reply(' KLIK INFORMASI YANG ANDA INGINKAN ',                                                                            //
-    {                                                                                                                           //
-        reply_markup: {                                                                                                         //
-            inline_keyboard: [                                                                                                  //
+)
+
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+//      SCRIPT BACK TO MENU                                                   //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+bot.action("menu", (ctx)=>{
+    ctx.reply(' KLIK INFORMASI YANG ANDA INGINKAN ',
+    {
+        reply_markup: {
+            inline_keyboard: [
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],	//
+                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],                                    		//
-				[{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],                                                	//
+                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
+                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
-                [{text: "BULETIN 📖", callback_data: "buletin"}],                												//
-                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]               										//
-            ]                                                                                                                   //
-        }                                                                                                                       //
-    })                                                                                                                          //
-})                                                                                                                              //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]              										//
+            ]
+        }
+    })
+})
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                              //
-//                                                   PARAMETER INPUT                                                            //
-//                                                                                                                              //
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-bot.action('satelit', (ctx)=>{                                                                                                  //
-    ctx.reply('BERIKUT ADALAH CITRA SATELIT HIMAWARI KANAL ENHANCED IR DAN RAINFALL POTENTIAL')                                 //
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+//             PARAMETER INPUT                                        //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
+     
+bot.action('satelit', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH CITRA SATELIT HIMAWARI KANAL ENHANCED IR DAN RAINFALL POTENTIAL')
     ctx.replyWithPhoto(
         {
             source: download("http://dataweb.bmkg.go.id/Satelit/IMAGE/HIMA/H08_EH_Kalbar.png")
@@ -89,13 +68,13 @@ bot.action('satelit', (ctx)=>{                                                  
             source: download("http://dataweb.bmkg.go.id/Satelit/IMAGE/HIMA/H08_RP_Kalbar.png")
         }
     ,
-	{                                                                                                                           //
-        reply_markup: {                                                                                                         //
-            inline_keyboard: [                                                                                                  //
-                [{text: "MENU UTAMA", callback_data: "menu"}]                                                                   //
-            ]                                                                                                                   //
-        }                                                                                                                       //
-    })                                                                                                                          //
+	{
+        reply_markup: {
+            inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    })
 })
 
 bot.action('radar', (ctx)=>{
@@ -112,7 +91,6 @@ bot.action('radar', (ctx)=>{
         }
     }) 
 })
-
 
 bot.action('karhutla', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI KEBAKARAN HUTAN DAN LAHAN')
@@ -136,7 +114,6 @@ bot.action('karhutla', (ctx)=>{
         }
     }) 
 })
-
 
 bot.action('maps', (ctx)=>{
     ctx.reply(
@@ -165,7 +142,6 @@ bot.action('banjir', (ctx)=>{
     }) 
 })
 
-
 bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
@@ -180,7 +156,6 @@ bot.action('angin', (ctx)=>{
         }
     }) 
 })
-
 
 bot.action('harian', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI CUACA HARIAN')
@@ -202,18 +177,18 @@ bot.action('tigahari', (ctx)=>{
     ctx.replyWithPhoto(
         {
             source: "3hari.png" 
-        },                                                                                                                      //
-    {                                                                                                                           //
-        reply_markup: {                                                                                                         //
-            inline_keyboard: [                                                                                                  //
+        },
+    {
+        reply_markup: {
+            inline_keyboard: [
                 [{text: "MENU UTAMA", callback_data: "menu"}]   
             ]
         }
     }) 
 })
 
-bot.action('mingguan', (ctx)=>{                                                                                                 //
-    ctx.reply('BERIKUT ADALAH PRAKIRAAN CUACA SATU MINGGU KEDEPAN')                                                             //
+bot.action('mingguan', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH PRAKIRAAN CUACA SATU MINGGU KEDEPAN')
     ctx.replyWithPhoto(
         {
             source: "mingguan.png"
@@ -222,31 +197,28 @@ bot.action('mingguan', (ctx)=>{                                                 
         reply_markup: {
             inline_keyboard: [
                 [{text: "MENU UTAMA", callback_data: "menu"}]
-            ]                                                                                                                   //
-        }                                                                                                                       //
-    })                                                                                                                          //
-})                                                                                                                              // 
-
+            ]
+        }
+    })
+})
 
 bot.action('buletin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH BULETIN CUACA BULANAN')
     ctx.reply('Mohon Menunggu Sampai PDF Muncul (berdasarkan kecepatan internet)')
     ctx.replyWithDocument(
-        {                                                                                                                       //
-            source: "BuletinAug.pdf"},                                                                                         //
-        {                                                                                                                       //
-            thumb: {                                                                                                            //
-                    source: "thumb.jpg" // thumbnail                                                                            //
-                },                                                                                                              //
-                    reply_markup: {                                                                                             //
-                    inline_keyboard: [                                                                                          //
-                [{text: "MENU UTAMA", callback_data: "menu"                                                                     //
-                }]                                                                                                              //
-            ]                                                                                                                   //
-        }                                                                                                                       //
-    })                                                                                                                          //
-})                                                                                                                              //
-
+        {
+            source: "BuletinAug.pdf"},
+        {
+            thumb: {
+                    source: "thumb.jpg" 	// thumbnail Buletin
+                },
+                    reply_markup: {
+                    inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    })
+})
 
 bot.action('IKM', (ctx)=>{
     ctx.reply('SILAKAN MENGISI SURVEI KEPUASAN MASYARAKAT')
@@ -259,5 +231,10 @@ bot.action('IKM', (ctx)=>{
         ]}
     })
 })
-// Export bot handler
+////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////
+//    Export Bot Handler         //
+///////////////////////////////////
 module.exports = bot
