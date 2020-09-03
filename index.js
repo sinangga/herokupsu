@@ -18,9 +18,10 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
-                [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
+                [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
-                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+		[{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
     })
@@ -42,9 +43,10 @@ bot.action("menu", (ctx)=>{
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
-                [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],                   //
+                [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
-                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}]              										//
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+		[{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
     })
@@ -225,6 +227,16 @@ bot.action('IKM', (ctx)=>{
     ctx.reply('BUKA LINK YANG TERTERA DI BAWAH INI')
     ctx.reply('https://forms.gle/Px3f5v75XkuHHn5C9',
     {
+        reply_markup: {
+            inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+        ]}
+    })
+})
+
+bot.action('chatad', (ctx)=> {
+	ctx.reply('https://t.me/bmkgpangsuma',
+	{
         reply_markup: {
             inline_keyboard: [
                 [{text: "MENU UTAMA", callback_data: "menu"}]
