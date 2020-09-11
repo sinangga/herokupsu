@@ -3,16 +3,16 @@ const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
 
-// const date1 = new Date();
-// const today = date1.getUTCDate();
-// const year = date1.getUTCFullYear();
-// if (date1.getUTCMonth() < 10) {
-// 	var mm = date1.getUTCMonth()
-// 	var mm = "0"+mm;  
-// } else {
-//   	var mm = date1.geUTCtMonth();
-// }
-// var tgl = syear+mm+today;
+const date1 = new Date();
+const today = date1.getUTCDate();
+const year = date1.getUTCFullYear();
+if (date1.getUTCMonth() < 10) {
+	var mm = date1.getUTCMonth()
+	var mm = "0"+mm;  
+} else {
+  	var mm = date1.geUTCtMonth();
+}
+var tgl = year+mm+today;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -159,7 +159,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_2020091219.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
         },
     {
         reply_markup: {
