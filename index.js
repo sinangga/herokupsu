@@ -3,14 +3,14 @@ const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
 
-const date1 = new Date();
-const today = date1.getUTCDate();
-const year = date1.getUTCFullYear();
-if (date1.getUTCMonth() < 10) {
-	var mm = date1.getUTCMonth()
+var d = new Date();
+var today = d.getUTCDate();
+var year = d.getUTCFullYear();
+if (d.getUTCMonth() < 10) {
+	var mm = 1+d.getUTCMonth()
 	var mm = "0"+mm;  
 } else {
-  	var mm = date1.geUTCtMonth();
+  	var mm = 1+d.geUTCtMonth();
 }
 var tgl = year+mm+today;
 
