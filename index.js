@@ -3,6 +3,17 @@ const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
 
+const date1 = new Date();
+const today = date1.getUTCDate();
+const year = date1.getUTCFullYear();
+if (date1.getMonth() < 10) {
+	var mm = 1+date1.getMonth()
+	var mm = "0"+mm;  
+} else {
+  	var mm = 1+date1.getMonth();
+}
+var tgl = ""+year+mm+today;
+
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
 //              HEADER BOT TELEGRAM                                //
@@ -148,7 +159,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: "angin.png"
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
         },
     {
         reply_markup: {
