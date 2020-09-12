@@ -4,15 +4,21 @@ const bot = new Composer()
 const download = require('download')
 
 var d = new Date();
-var today = d.getUTCDate();
-var year = d.getUTCFullYear();
 if (d.getUTCMonth() < 10) {
 	var mm = 1+d.getUTCMonth()
 	var mm = "0"+mm;  
 } else {
   	var mm = 1+d.geUTCtMonth();
 }
-var tgl = year+mm+today;
+
+var jam = d.getUTCHours()
+if (jam < 12 ) {
+    jam = "07";
+} else {
+    jam = "12"
+}
+
+var tgl = d.getUTCFullYear() + mm + d.getUTCDate() + jam;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
