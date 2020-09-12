@@ -38,7 +38,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
-		[{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
+		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
     })
@@ -63,7 +63,7 @@ bot.action("menu", (ctx)=>{
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
-		[{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
+		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
     })
@@ -165,7 +165,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'07.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
         },
     {
         reply_markup: {
