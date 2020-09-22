@@ -30,7 +30,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
     {
         reply_markup: {
             inline_keyboard: [
-[{text: "ANALISIS BANJIR 📖", callback_data: "buletin"}],
+[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
                 [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
@@ -56,7 +56,7 @@ bot.action("menu", (ctx)=>{
     {
         reply_markup: {
             inline_keyboard: [
-[{text: "ANALISIS BANJIR 📖", callback_data: "buletin"}],
+[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
                 [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
