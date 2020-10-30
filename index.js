@@ -4,7 +4,7 @@ const bot = new Composer()
 const download = require('download')
 
 var d = new Date();
-yy = d.getUTCFullYear();
+var yy = d.getUTCFullYear();
 
 if (d.getUTCMonth() <= 8) {
 	var mm = 1+d.getUTCMonth()
