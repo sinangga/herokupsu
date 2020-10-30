@@ -18,7 +18,7 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-var tgl = d.getUTCYear() + mm + d.getUTCDate() + jam;
+var tgl = d.getUTCFullYear() + mm + d.getUTCDate() + jam;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
