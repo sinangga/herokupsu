@@ -4,11 +4,11 @@ const bot = new Composer()
 const download = require('download')
 
 var d = new Date();
-if (d.getUTCMonth() < 10) {
+if (d.getUTCMonth() <= 8) {
 	var mm = 1+d.getUTCMonth()
 	var mm = "0"+mm;  
 } else {
-  	var mm = 1+d.geUTCtMonth();
+  	var mm = 1+d.getUTCMonth();
 }
 
 var jam = d.getUTCHours()
@@ -18,7 +18,7 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-var tgl = mm + d.getUTCDate() + jam;
+var tgl = d.getUTCYear() + mm + d.getUTCDate() + jam;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -167,7 +167,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_2020'+tgl+'.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
         },
     {
         reply_markup: {
