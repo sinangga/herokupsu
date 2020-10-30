@@ -15,7 +15,7 @@ var jam = d.getUTCHours()
 if (jam < 12 ) {
     jam = "07";
 } else {
-    jam = "19"
+    jam = "07"
 }
 
 var tgl = d.getUTCFullYear() + mm + d.getUTCDate() + jam;
