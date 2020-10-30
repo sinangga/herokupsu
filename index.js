@@ -18,7 +18,7 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-var tgl = d.getUTCFullYear() + mm + d.getUTCDate() + jam;
+var tgl = d.getUTCDate() + jam;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -167,7 +167,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_202010'+tgl+'.jpg')
         },
     {
         reply_markup: {
