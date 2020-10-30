@@ -14,14 +14,12 @@ if (d.getUTCMonth() <= 8) {
 
 var jam = d.getUTCHours()
 if (jam < 12 ) {
-	yy = d.getUTCFullYear()
     jam = "070000";
 } else {
-	yy = d.getUTCFullYear()
     jam = "070000"
 }
 
-var tgl = yy + mm + d.getUTCDate() + jam;
+var tgl = mm + d.getUTCDate() + jam;
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -170,7 +168,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_2020'+tgl+'.jpg')
         },
     {
         reply_markup: {
