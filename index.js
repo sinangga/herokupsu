@@ -4,7 +4,6 @@ const bot = new Composer()
 const download = require('download')
 
 var d = new Date();
-var yy = d.getUTCFullYear();
 
 if (d.getUTCMonth() <= 8) {
 	var mm = 1+d.getUTCMonth()
@@ -15,8 +14,10 @@ if (d.getUTCMonth() <= 8) {
 
 var jam = d.getUTCHours()
 if (jam < 12 ) {
+	yy = d.getUTCFullYear()
     jam = "070000";
 } else {
+	yy = d.getUTCFullYear()
     jam = "070000"
 }
 
