@@ -167,7 +167,7 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+'.jpg')
         },
     {
         reply_markup: {
