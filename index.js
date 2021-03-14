@@ -84,12 +84,12 @@ bot.action('satelit', (ctx)=>{
     ctx.reply('BERIKUT ADALAH CITRA SATELIT HIMAWARI KANAL ENHANCED IR DAN RAINFALL POTENTIAL')
     ctx.replyWithPhoto(
         {
-            source: download("http://dataweb.bmkg.go.id/Satelit/IMAGE/HIMA/H08_EH_Kalbar.png")
+            source: download("http://satelit.bmkg.go.id/IMAGE/HIMA/H08_EH_Kalbar.png")
         }
     ),
     ctx.replyWithPhoto(
         {
-            source: download("http://dataweb.bmkg.go.id/Satelit/IMAGE/HIMA/H08_RP_Kalbar.png")
+            source: download("http://satelit.bmkg.go.id/IMAGE/HIMA/H08_RP_Kalbar.png")
         }
     ,
 	{
@@ -105,7 +105,7 @@ bot.action('radar', (ctx)=>{
     ctx.reply('BERIKUT ADALAH CITRA RADAR')
     ctx.replyWithPhoto(
         {
-            source: download('https://dataweb.bmkg.go.id/MEWS/Radar/SINT_SingleLayerCRefQC.png')
+            source: download('https://inderaja.bmkg.go.id/Radar/SINT_SingleLayerCRefQC.png')
         },
     {
         reply_markup: {
