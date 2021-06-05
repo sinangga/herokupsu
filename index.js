@@ -2,6 +2,7 @@ const { readFileSync } = require('fs')
 const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
+const sharp = require('sharp');
 
 var d = new Date();
 var yy = d.getUTCFullYear()
@@ -84,12 +85,12 @@ bot.action('satelit', (ctx)=>{
     ctx.reply('BERIKUT ADALAH CITRA SATELIT HIMAWARI KANAL ENHANCED IR DAN RAINFALL POTENTIAL')
     ctx.replyWithPhoto(
         {
-            source: download("http://satelit.bmkg.go.id/IMAGE/HIMA/H08_EH_Kalbar.png")
+            source: download("https://inderaja.bmkg.go.id/IMAGE/HIMA/H08_EH_Kalbar.png")
         }
     ),
     ctx.replyWithPhoto(
         {
-            source: download("http://satelit.bmkg.go.id/IMAGE/HIMA/H08_RP_Kalbar.png")
+            source: download("https://inderaja.bmkg.go.id/IMAGE/HIMA/H08_RP_Kalbar.png")
         }
     ,
 	{
@@ -120,7 +121,7 @@ bot.action('karhutla', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI KEBAKARAN HUTAN DAN LAHAN')
     ctx.replyWithPhoto(
         {
-            source: download('http://dataweb.bmkg.go.id/Satelit/IMAGE/HOTSPOT/Hotspot_Kalbar.png')
+            source: download('https://inderaja.bmkg.go.id/IMAGE/HOTSPOT/Hotspot_Kalbar.png')
         })
     ctx.replyWithPhoto(
         {
