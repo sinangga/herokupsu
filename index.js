@@ -165,7 +165,14 @@ bot.action('banjir', (ctx)=>{
     // });
     ctx.replyWithPhoto(
 		{
-			source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+			source: (
+                    Clipper('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg', function() {
+                    this.crop(20, 20, 100, 100)
+                    .resize(50, 50)
+                    .quality(80)
+                    .toFile()
+                    })
+            )
 		},
     {
         reply_markup: {
