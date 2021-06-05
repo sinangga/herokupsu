@@ -2,7 +2,7 @@ const { readFileSync } = require('fs')
 const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
-const sharp = require('sharp');
+var Clipper = require('image-clipper');
 
 var d = new Date();
 var yy = d.getUTCFullYear()
@@ -154,9 +154,18 @@ bot.action('maps', (ctx)=>{
 
 bot.action('banjir', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR HARIAN')
+    // download and clipping image
+    // const ibf = download('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+
+    Clipper('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg', function() {
+        this.crop(20, 20, 100, 100)
+        .resize(50, 50)
+        .quality(80)
+        .toFile('result.jpg')
+    });
     ctx.replyWithPhoto(
 		{
-			source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+			source: 'result.jpg'
 		},
     {
         reply_markup: {
