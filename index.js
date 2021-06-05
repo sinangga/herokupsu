@@ -3,6 +3,12 @@ const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
 var Clipper = require('image-clipper');
+var Canvas = require('canvas');
+var clipper = Clipper();
+ 
+clipper.injectNodeCanvas(Canvas);
+clipper.configure('canvas', Canvas);
+var canvas = clipper.getCanvas();
 
 var d = new Date();
 var yy = d.getUTCFullYear()
