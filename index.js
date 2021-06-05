@@ -184,14 +184,13 @@ bot.action('banjir', (ctx)=>{
     //         .toFile('result.jpg')
     //     });
     // })
+        sharp('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+        .resize(320, 240)
+        .toFile('output.jpg')
 
     ctx.replyWithPhoto(
         {
-            source: (
-                sharp('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
-                .resize(320, 240)
-                .toFile('output.jpg')
-            )
+            source: "output.jpg"
         },
     {
         reply_markup: {
