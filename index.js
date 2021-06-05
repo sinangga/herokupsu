@@ -160,15 +160,28 @@ bot.action('maps', (ctx)=>{
 
 bot.action('banjir', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR HARIAN')
+
+
     // download and clipping image
     // const ibf = download('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+    const { createCanvas } = require('canvas')
+    const mycanvas = createCanvas(200, 200)
+    const { createImageData } = require('canvas')
+    const width = 20, height = 20
+    const arraySize = width * height * 4
+    const mydata = createImageData(new Uint8ClampedArray(arraySize), width)
+    const { loadImage } = require('canvas')
+    const myimg = loadImage('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
 
-    Clipper('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg', function() {
-        this.crop(20, 20, 100, 100)
-        .resize(50, 50)
-        .quality(80)
-        .toFile('result.jpg')
-    });
+    myimg.then(() => {
+        Clipper('myimg', function() {
+            this.crop(20, 20, 100, 100)
+            .resize(50, 50)
+            .quality(80)
+            .toFile('result.jpg')
+        });
+    })
+
     ctx.replyWithPhoto(
 		{
 			source: ('result.jpg')
