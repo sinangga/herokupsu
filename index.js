@@ -2,6 +2,9 @@ const { readFileSync } = require('fs')
 const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
+const sharp = require('sharp');
+
+
 var Clipper = require('image-clipper');
 var Canvas = require('canvas');
 var clipper = Clipper();
@@ -164,28 +167,32 @@ bot.action('banjir', (ctx)=>{
 
     // download and clipping image
     // const ibf = download('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
-    const { createCanvas } = require('canvas')
-    const mycanvas = createCanvas(200, 200)
-    const { createImageData } = require('canvas')
-    const width = 20, height = 20
-    const arraySize = width * height * 4
-    const mydata = createImageData(new Uint8ClampedArray(arraySize), width)
-    const { loadImage } = require('canvas')
-    const myimg = loadImage('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+    // const { createCanvas } = require('canvas')
+    // const mycanvas = createCanvas(200, 200)
+    // const { createImageData } = require('canvas')
+    // const width = 20, height = 20
+    // const arraySize = width * height * 4
+    // const mydata = createImageData(new Uint8ClampedArray(arraySize), width)
+    // const { loadImage } = require('canvas')
+    // const myimg = loadImage('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
 
-    myimg.then(() => {
-        Clipper('myimg', function() {
-            this.crop(20, 20, 100, 100)
-            .resize(50, 50)
-            .quality(80)
-            .toFile('result.jpg')
-        });
-    })
+    // myimg.then(() => {
+    //     Clipper('myimg', function() {
+    //         this.crop(20, 20, 100, 100)
+    //         .resize(50, 50)
+    //         .quality(80)
+    //         .toFile('result.jpg')
+    //     });
+    // })
 
     ctx.replyWithPhoto(
-		{
-			source: ('result.jpg')
-		},
+        {
+            source: (
+                sharp('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
+                .resize(320, 240)
+                .toFile('output.jpg')
+            )
+        },
     {
         reply_markup: {
             inline_keyboard: [
