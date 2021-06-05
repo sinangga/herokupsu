@@ -9,6 +9,7 @@
   "author": "sinangga",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.8.0",
     "composer": "^4.1.0",
     "download": "^8.0.0",
     "fs": "0.0.1-security",
