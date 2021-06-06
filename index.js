@@ -2,16 +2,10 @@ const { readFileSync } = require('fs')
 const { Composer } = require('micro-bot')
 const bot = new Composer()
 const download = require('download')
+const gm = require('gm')
 const sharp = require('sharp');
 
 
-var Clipper = require('image-clipper');
-var Canvas = require('canvas');
-var clipper = Clipper();
- 
-clipper.injectNodeCanvas(Canvas);
-clipper.configure('canvas', Canvas);
-var canvas = clipper.getCanvas();
 
 var d = new Date();
 var yy = d.getUTCFullYear()
@@ -188,7 +182,7 @@ bot.action('banjir', (ctx)=>{
     // var ibfkalbar = "ibfkalbar.jpg"
     //     sharp(ibf).extract({width: 1600,height:900,left:60,top:40}).toFile(ibfkalbar)
 
-    const gm = require('gm');
+
     const width = 300;
     const height = 400;
 
