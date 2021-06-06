@@ -9,10 +9,10 @@
   "author": "sinangga",
   "license": "ISC",
   "dependencies": {
-    "canvas": "^2.8.0",
     "composer": "^4.1.0",
     "download": "^8.0.0",
     "fs": "0.0.1-security",
+    "gm": "^1.23.1",
     "image-clipper": "^0.4.4",
     "micro-bot": "^2.5.3",
     "sharp": "^0.28.3"
