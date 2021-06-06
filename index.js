@@ -178,9 +178,8 @@ bot.action('banjir', (ctx)=>{
     //         .toFile('result.jpg')
     //     });
     // })
-    var ibf = "harian.jpg"
-    var ibfkalbar = "ibfkalbar.jpg"
-    sharp(ibf).resize(50,50).toFile(ibfkalbar)
+
+    sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg").resize(50,10).toFile(ibfkalbar)
 
 
     ctx.replyWithPhoto(
