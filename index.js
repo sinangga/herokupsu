@@ -194,11 +194,11 @@ bot.action('banjir', (ctx)=>{
 
     gm('http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg')
     .crop(width, height)
-    .write('.tmp/ibfkalbar.jpg')
+    .write('./tmp.jpg')
 
     ctx.replyWithPhoto(
         {
-            source: ".tmp/ibfkalbar.jpg"
+            source: "./tmp.jpg"
         },
     {
         reply_markup: {
