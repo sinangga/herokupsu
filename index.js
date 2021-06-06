@@ -196,7 +196,7 @@ bot.action('banjir', (ctx)=>{
 
     ctx.replyWithPhoto(
         {
-            source: "ibfkalbar.jpg"
+            source: ibfkalbar
         },
     {
         reply_markup: {
