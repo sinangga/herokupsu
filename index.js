@@ -179,6 +179,8 @@ bot.action('banjir', (ctx)=>{
     //     });
     // })
 
+    let ibfkalbar = "ibfkalbar.jpg"
+
     sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg").resize(50,10).toFile(ibfkalbar)
 
 
