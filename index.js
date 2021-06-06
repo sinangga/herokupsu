@@ -179,12 +179,14 @@ bot.action('banjir', (ctx)=>{
     //     });
     // })
 
-    sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg").resize(50,10).toFile("ibfkalbar.jpg")
+    // sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg").resize(50,10).toFile("./ibfkalbar.jpg")
 
 
     ctx.replyWithPhoto(
         {
-            source: "ibfkalbar.jpg"
+            source: (
+                sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibf/barat_d2.jpg").resize(50,10)
+            )
         },
     {
         reply_markup: {
