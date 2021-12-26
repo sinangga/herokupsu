@@ -160,7 +160,7 @@ bot.action('banjir', (ctx)=>{
     ctx.replyWithPhoto(
         {
             source: (
-                sharp("http://web.meteo.bmkg.go.id//media/data/bmkg/ibfnew/20_kalbar_00.png").resize(50,10)
+                sharp("http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png").resize(50,10)
             )
         },
     {
