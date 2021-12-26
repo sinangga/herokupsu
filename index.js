@@ -239,7 +239,7 @@ bot.action('mingguan', (ctx)=>{
     })
 })
 
-bot.action('tafor', (ctx)=>{
+/* bot.action('tafor', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
     for (const index in jamm) {  
 		ctx.replyWithPhoto(
@@ -254,7 +254,7 @@ bot.action('tafor', (ctx)=>{
         }
     }) 
 })
-
+*/
 bot.action('buletin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH BULETIN CUACA BULANAN')
     ctx.reply('Mohon Menunggu Sampai PDF Muncul (berdasarkan kecepatan internet)')
