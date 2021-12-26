@@ -159,10 +159,8 @@ bot.action('banjir', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR HARIAN')
     ctx.replyWithPhoto(
         {
-            source: (
-                sharp("http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png").resize(50,10)
-            )
-        },
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png')
+            },
     {
         reply_markup: {
             inline_keyboard: [
