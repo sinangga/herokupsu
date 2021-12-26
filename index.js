@@ -239,15 +239,13 @@ bot.action('mingguan', (ctx)=>{
     })
 })
 
-/* bot.action('tafor', (ctx)=>{
+bot.action('tafor', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
     for (const index in jamm) {  
 		ctx.replyWithPhoto(
         {
             source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tgl+`${jamm[index]}`+'.png')
-        })
-	}
-	,
+	},
     {
         reply_markup: {
             inline_keyboard: [
@@ -256,7 +254,6 @@ bot.action('mingguan', (ctx)=>{
         }
     }) 
 })
-*/
 
 bot.action('buletin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH BULETIN CUACA BULANAN')
