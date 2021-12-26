@@ -5,8 +5,6 @@ const download = require('download')
 const gm = require('gm')
 const sharp = require('sharp');
 
-
-
 var d = new Date();
 var yy = d.getUTCFullYear()
 var yy = yy.toString ()
@@ -26,7 +24,16 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-var tgl = yy + mm + d.getUTCDate() + jam;
+const jamm = ["070000","100000","130000", "160000","190000"]
+var tgl = yy + mm + d.getUTCDate();
+//var tgl2a = d.getUTCDate() + 1;
+//var tgl2 = yy + mm + tgl2a;
+//for (const index in jamm) {  
+//  console.log(tgl2+`${jamm[index]}`)
+//}
+
+
+
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
 //              HEADER BOT TELEGRAM                                //
@@ -44,6 +51,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
+				[{text: "TAFOR 📖", callback_data: "tafor"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
@@ -70,7 +78,8 @@ bot.action("menu", (ctx)=>{
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
+                [{text: "TAFOR 📖", callback_data: "tafor"}],
+				[{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
@@ -228,6 +237,24 @@ bot.action('mingguan', (ctx)=>{
             ]
         }
     })
+})
+
+bot.action('tafor', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
+    for (const index in jamm) {  
+		ctx.replyWithPhoto(
+        {
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tgl+`${jamm[index]}`+'.png')
+        })
+	}
+	,
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    }) 
 })
 
 bot.action('buletin', (ctx)=>{
