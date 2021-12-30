@@ -42,7 +42,8 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-				[{text: "TAFOR 📈🌤", callback_data: "tafor"}],
+				[{text: "TAFOR 📈🌤",
+                    inline_keyboard: [{text: "RAIN RATE", callback_data: "tafor"}, {text: "KELEMBAPAN", callback_data: "RH"}]}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
@@ -69,7 +70,8 @@ bot.action("menu", (ctx)=>{
                 [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "TAFOR 📈🌤", callback_data: "tafor"}],
+				[{text: "TAFOR 📈🌤",
+                    inline_keyboard: [{text: "RAIN RATE", callback_data: "tafor"}, {text: "KELEMBAPAN", callback_data: "RH"}]}],
 				[{text: "BULETIN 📖", callback_data: "buletin"}],                													//
                 [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
