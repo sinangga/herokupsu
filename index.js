@@ -24,8 +24,7 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-const jamm = ["070000","100000","130000", "160000","190000"]
-var tgl = yy + mm + d.getUTCDate();
+
 //var tgl2a = d.getUTCDate() + 1;
 //var tgl2 = yy + mm + tgl2a;
 //for (const index in jamm) {  
@@ -179,6 +178,25 @@ bot.action('banjir', (ctx)=>{
     }) 
 })
 
+bot.action('tafor', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
+    const jamm = ["070000","100000","130000", "160000","190000"]
+    var tgl = yy + mm + d.getUTCDate();
+    for (const ttgl in jamm) {  
+	    ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tgl+`${jamm[ttgl]}`+'.png')
+	        },
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: "MENU UTAMA", callback_data: "menu"}]
+                ]
+            }
+        }) 
+    }
+})
+
 bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
@@ -239,22 +257,6 @@ bot.action('mingguan', (ctx)=>{
     })
 })
 
-/* bot.action('tafor', (ctx)=>{
-    ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
-    for (const index in jamm) {  
-		ctx.replyWithPhoto(
-        {
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tgl+`${jamm[index]}`+'.png')
-	},
-    {
-        reply_markup: {
-            inline_keyboard: [
-                [{text: "MENU UTAMA", callback_data: "menu"}]
-            ]
-        }
-    }) 
-})
-*/
 bot.action('buletin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH BULETIN CUACA BULANAN')
     ctx.reply('Mohon Menunggu Sampai PDF Muncul (berdasarkan kecepatan internet)')
