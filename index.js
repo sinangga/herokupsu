@@ -25,14 +25,6 @@ if (jam < 12 ) {
 }
 
 
-//var tgl2a = d.getUTCDate() + 1;
-//var tgl2 = yy + mm + tgl2a;
-//for (const index in jamm) {  
-//  console.log(tgl2+`${jamm[index]}`)
-//}
-
-
-
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
 //              HEADER BOT TELEGRAM                                //
@@ -181,7 +173,8 @@ bot.action('banjir', (ctx)=>{
 bot.action('tafor', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
     const jamm = ["070000","100000","130000", "160000","190000"]
-    var tgl = yy + mm + d.getUTCDate();
+    var dtdate = d.getUTCDate() + 1;
+    var tgl = yy + mm + dtdate;
     for (const ttgl in jamm) {  
 	    ctx.replyWithPhoto(
             {
