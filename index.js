@@ -28,6 +28,18 @@ const jamm = ["070000","100000","130000", "160000","190000"]
 var dateplus = d.getUTCDate() + 1;
 var tgl = yy + mm + d.getUTCDate();
 var tglplus = yy + mm + dateplus;
+
+/////////////////////////////////////////////////////////////////////
+//                                                                 //
+//              HEADER BOT TELEGRAM                                //
+//            (modified by.sinangga)                               //
+//            [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
+//            [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
+//            [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
+//            [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
+//            [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+/////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
 //              HEADER BOT TELEGRAM                                //
@@ -38,17 +50,12 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
     {
         reply_markup: {
             inline_keyboard: [
-                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
-                [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "TAFOR 📈🌤", callback_data: "tafor"}],
-                [{text: "Rainrate", callback_data: "rainrate"}, {text: "Suhu", callback_data: "suhu"}, {text: "Kelembapan", callback_data: "kelembapan"}],
+                [{text: "👇🏻👇🏻👇🏻 MENU BAHAN PEMBUATAN TAFOR 📈🌤", callback_data: "tafor"}],
+                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
-                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
@@ -66,17 +73,12 @@ bot.action("menu", (ctx)=>{
     {
         reply_markup: {
             inline_keyboard: [
-                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
-                [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "TAFOR 📈🌤", callback_data: "tafor"}],
-                [{text: "Rainrate", callback_data: "rainrate"}, {text: "Suhu", callback_data: "suhu"}, {text: "Kelembapan", callback_data: "kelembapan"}],
-				[{text: "BULETIN 📖", callback_data: "buletin"}],                													//
-                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+                [{text: "👇🏻👇🏻👇🏻 MENU BAHAN PEMBUATAN TAFOR 📈🌤", callback_data: "tafor"}],
+                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
+				[{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
@@ -175,24 +177,46 @@ bot.action('banjir', (ctx)=>{
     }) 
 })
 
-bot.action('tafor', (ctx)=>{
-    ctx.reply('BERIKUT ADALAH INFORMASI PENDUKUNG PEMBUATAN TAFOR',
-    {
-        inline_keyboard: [
-            [{text: "Rainrate", callback_data: "rainrate"}, {text: "Kelembapan", callback_data: "kelembapan"}],
-            [{text: "Contoh TAFOR", callback_data: "cthtafor"}],
-            [{text: "MENU UTAMA", callback_data: "menu"}]
-        ]
-    })
-})
-
-
 bot.action('rainrate', (ctx)=>{
-    ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN RAINRATE TIAP-TIAP JAM')
     for (const tgl1 in jamm) {  
         ctx.replyWithPhoto(
             {
                 source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tglplus+`${jamm[tgl1]}`+'.png')
+            },
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: "MENU UTAMA", callback_data: "menu"}]
+                ]
+            }
+        }) 
+    }
+})
+
+bot.action('suhu', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN SUHU UDARA')
+    for (const tgl1 in jamm) {  
+        ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/TEMP/temp_ifs0p125_2m_'+tglplus+`${jamm[tgl1]}`+'.png')
+            },
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: "MENU UTAMA", callback_data: "menu"}]
+                ]
+            }
+        }) 
+    }
+})
+
+bot.action('kelembapan', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN KELEMBAPAN UDARA')
+    for (const tgl1 in jamm) {  
+        ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/RH/rh_ifs0p125_2m_'+tglplus+`${jamm[tgl1]}`+'.png')
             },
         {
             reply_markup: {
