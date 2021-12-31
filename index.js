@@ -25,9 +25,31 @@ if (jam < 12 ) {
 }
 
 const jamm = ["070000","100000","130000", "160000","190000"]
-var dateplus = d.getUTCDate() + 1;
-var tgl = yy + mm + d.getUTCDate();
-var tglplus = yy + mm + dateplus;
+//var dateplus = d.getUTCDate() + 1;
+var tgl = yy + mm + d.getUTCDate(); 
+//var tglplus = yy + mm + dateplus;
+
+var day = new Date();
+var nextDay = new Date(day);
+nextDay.setDate(day.getDate() + 1);
+let datenow = new Date(nextDay);
+var tglplus = (generateDatabaseDateTime(datenow));
+function generateDatabaseDateTime(date) {
+  const p = new Intl.DateTimeFormat('en', {
+    year:'numeric',
+    month:'2-digit',
+    day:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit',
+    second:'2-digit',
+    hour12: false
+  }).formatToParts(date).reduce((acc, part) => {
+    acc[part.type] = part.value;
+      return acc;
+  }, {});
+
+  return `${p.year}${p.month}${p.day}`;
+}
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -53,7 +75,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻👇🏻👇🏻 MENU BAHAN PEMBUATAN TAFOR 📈🌤", callback_data: "tafor"}],
+                [{text: "👇🏻👇🏻👇🏻 BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
@@ -76,7 +98,7 @@ bot.action("menu", (ctx)=>{
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻👇🏻👇🏻 MENU BAHAN PEMBUATAN TAFOR 📈🌤", callback_data: "tafor"}],
+                [{text: "👇🏻👇🏻👇🏻 BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
 				[{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
