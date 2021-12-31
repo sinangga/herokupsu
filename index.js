@@ -75,6 +75,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
                 [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
+                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
                 [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
@@ -98,7 +99,8 @@ bot.action("menu", (ctx)=>{
                 [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
-                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
+                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],                
+                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
                 [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
 				[{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
@@ -250,6 +252,26 @@ bot.action('kelembapan', (ctx)=>{
             }
         }) 
     }
+})
+
+bot.action('cthtafor', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH CONTOH LAPORAN TAFOR',
+    '',
+    'TAF WIOP 302300Z',
+    '3100/3112 26003KT 7000 SCT013 TEMPO 3108/3110 FEW012CB SCT013=',
+    '',
+    'TAF WIOP 310500Z',
+    'TAF WIOP 310500Z 3106/3118 15003KT 6000 SCT012 TEMPO 3109/3111 FEW011CB SCT012=',
+    '',
+    'TAF WIOP 311100Z',
+    '3112/3124 00000KT 8000 SCT013 TEMPO 3112/3115 4000 TSRA FEW011CB BKN012=',
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    }) 
 })
 
 
