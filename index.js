@@ -38,17 +38,17 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
     {
         reply_markup: {
             inline_keyboard: [
-                //[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
-                //[{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                //[{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
+                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
+                [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
+                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                //[{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
+                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "TAFOR 📈🌤", callback_data: ""}],
+                [{text: "TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "Rainrate", callback_data: "rainrate"}, {text: "Suhu", callback_data: "suhu"}, {text: "Kelembapan", callback_data: "kelembapan"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
-                //[{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
@@ -66,17 +66,17 @@ bot.action("menu", (ctx)=>{
     {
         reply_markup: {
             inline_keyboard: [
-                //[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
-                //[{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
-                //[{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
+                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
+                [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
+                [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                //[{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
+                [{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "TAFOR 📈🌤", callback_data: ""}],
+                [{text: "TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "Rainrate", callback_data: "rainrate"}, {text: "Suhu", callback_data: "suhu"}, {text: "Kelembapan", callback_data: "kelembapan"}],
 				[{text: "BULETIN 📖", callback_data: "buletin"}],                													//
-                //[{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
+                [{text: "SURVEI KEPUASAN MASYARAKAT", callback_data: "IKM"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
