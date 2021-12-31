@@ -174,11 +174,14 @@ bot.action('banjir', (ctx)=>{
 })
 
 bot.action('tafor', (ctx)=>{
-    inline_keyboard: [
-        [{text: "Rainrate", callback_data: "rainrate"}, {text: "Kelembapan", callback_data: "kelembapan"}],
-        [{text: "Contoh TAFOR", callback_data: "cthtafor"}],
-        [{text: "MENU UTAMA", callback_data: "menu"}]
-    ]
+    ctx.reply('BERIKUT ADALAH INFORMASI PENDUKUNG PEMBUATAN TAFOR',
+    {
+        inline_keyboard: [
+            [{text: "Rainrate", callback_data: "rainrate"}, {text: "Kelembapan", callback_data: "kelembapan"}],
+            [{text: "Contoh TAFOR", callback_data: "cthtafor"}],
+            [{text: "MENU UTAMA", callback_data: "menu"}]
+        ]
+    })
 })
 
 
