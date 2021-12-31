@@ -24,7 +24,10 @@ if (jam < 12 ) {
     jam = "070000"
 }
 
-
+const jamm = ["070000","100000","130000", "160000","190000"]
+var dateplus = d.getUTCDate() + 1;
+var tgl = yy + mm + d.getUTCDate();
+var tglplus = yy + mm + dateplus;
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
 //              HEADER BOT TELEGRAM                                //
@@ -35,7 +38,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
     {
         reply_markup: {
             inline_keyboard: [
-[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
+                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
                 [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
@@ -62,7 +65,7 @@ bot.action("menu", (ctx)=>{
     {
         reply_markup: {
             inline_keyboard: [
-[{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
+                [{text: "ANALISIS BANJIR 📖", callback_data: "analisisbanjir"}],
                 [{text: "CUACA HARIAN ☀️🌤⛅️", callback_data: "harian"}],
                 [{text: "PRAKIRAAN 3 HARI ⏳", callback_data: "tigahari"}, {text: "PRAKIRAAN 1 MINGGU 📅", callback_data: "mingguan"}],
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
@@ -171,15 +174,21 @@ bot.action('banjir', (ctx)=>{
 })
 
 bot.action('tafor', (ctx)=>{
+    inline_keyboard: [
+        [{text: "Rainrate", callback_data: "rainrate"}, {text: "Kelembapan", callback_data: "kelembapan"}],
+        [{text: "Contoh TAFOR", callback_data: "cthtafor"}],
+        [{text: "MENU UTAMA", callback_data: "menu"}]
+    ]
+})
+
+
+bot.action('rainrate', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI PENUNJANG PEMBUATAN TAFOR')
-    const jamm = ["070000","100000","130000", "160000","190000"]
-    var dtdate = d.getUTCDate() + 1;
-    var tgl = yy + mm + dtdate;
-    for (const ttgl in jamm) {  
-	    ctx.replyWithPhoto(
+    for (const tgl1 in jamm) {  
+        ctx.replyWithPhoto(
             {
-                source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tgl+`${jamm[ttgl]}`+'.png')
-	        },
+                source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tglplus+`${jamm[tgl1]}`+'.png')
+            },
         {
             reply_markup: {
                 inline_keyboard: [
@@ -189,6 +198,7 @@ bot.action('tafor', (ctx)=>{
         }) 
     }
 })
+
 
 bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
