@@ -25,9 +25,7 @@ if (jam < 12 ) {
 }
 
 const jamm = ["070000","100000","130000", "160000","190000"]
-//var dateplus = d.getUTCDate() + 1;
 var tgl = yy + mm + d.getUTCDate(); 
-//var tglplus = yy + mm + dateplus;
 
 var day = new Date();
 var nextDay = new Date(day);
@@ -73,10 +71,11 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
+                [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻👇🏻👇🏻 BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
-                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
+                [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
+                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
+                [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
@@ -96,10 +95,11 @@ bot.action("menu", (ctx)=>{
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
+                [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻👇🏻👇🏻 BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
-                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU UDARA", callback_data: "suhu"}, {text: "KELEMBAPAN UDARA", callback_data: "kelembapan"}],
+                [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
+                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
+                [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
 				[{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
@@ -185,10 +185,12 @@ bot.action('maps', (ctx)=>{
 })
 
 bot.action('banjir', (ctx)=>{
-    ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR HARIAN')
+    ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR UNTUK TIGA HARI KEDEPAN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png')
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png'),
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png'),
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')
             },
     {
         reply_markup: {
