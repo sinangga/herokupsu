@@ -73,10 +73,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
-                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
-                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
-                [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
+                [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
@@ -98,11 +95,8 @@ bot.action("menu", (ctx)=>{
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "👇🏻 BAHAN TAFOR 📈🌤 👇🏻", callback_data: "tafor"}],
-                [{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],                
-                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
-                [{text: "👆🏻 BAHAN TAFOR 📈🌤 👆🏻", callback_data: "tafor"}],
-				[{text: "BULETIN 📖", callback_data: "buletin"}],
+                [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
+		[{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
