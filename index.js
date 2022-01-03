@@ -71,7 +71,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
+                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
@@ -93,7 +93,7 @@ bot.action("menu", (ctx)=>{
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
-                [{text: "POTENSI BANJIR TIGA HARIAN 🌊", callback_data: "banjir"}],
+                [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
 		[{text: "BULETIN 📖", callback_data: "buletin"}],
@@ -173,12 +173,10 @@ bot.action('maps', (ctx)=>{
 })
 
 bot.action('banjir', (ctx)=>{
-    ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR UNTUK TIGA HARI KEDEPAN')
+    ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR UNTUK HARI INI')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png'),
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png'),
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png')
         },
     {
         reply_markup: {
