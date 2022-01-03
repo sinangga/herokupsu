@@ -265,6 +265,19 @@ bot.action('cthtafor', (ctx)=>{
     }) 
 })
 
+bot.action('tafor', (ctx)=>{
+    ctx.reply("PILIH PARAMETER CUACA YANG ANDA INGINKAN",
+    {
+        reply_markup: {
+            inline_keyboard: [
+		[{text: "RAINRATE", callback_data: "rainrate"}, {text: "SUHU", callback_data: "suhu"}, {text: "KELEMBAPAN", callback_data: "kelembapan"}],
+                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    }) 
+})
+
 
 bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
