@@ -150,15 +150,7 @@ bot.action('karhutla', (ctx)=>{
     ctx.replyWithPhoto(
         {
             source: download('https://inderaja.bmkg.go.id/IMAGE/HOTSPOT/Hotspot_Kalbar.png')
-        })
-    ctx.replyWithPhoto(
-        {
-            source: "hotspread.png"
-        })
-    ctx.replyWithPhoto(
-        {
-            source: "karhut.png"
-        },
+        }),
     {
         reply_markup: {
             inline_keyboard: [
@@ -186,7 +178,7 @@ bot.action('banjir', (ctx)=>{
         {
             source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png'),
             source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png'),
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png'),
             },
     {
         reply_markup: {
