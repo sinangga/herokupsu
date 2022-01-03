@@ -176,7 +176,7 @@ bot.action('banjir', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR UNTUK TIGA HARI KEDEPAN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png','http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png','http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png',download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png',download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')))
             },
     {
         reply_markup: {
