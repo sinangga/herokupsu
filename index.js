@@ -48,7 +48,6 @@ function generateDatabaseDateTime(date) {
   return `${p.year}${p.month}${p.day}`;
 }
 
-var tgl = yy + mm + tglplus; 
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
@@ -271,9 +270,9 @@ bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+jam+'.jpg')
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tglplus+jam+'.jpg')
         },
-	    console.log('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+jam+'.jpg'),
+	    console.log('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tglplus+jam+'.jpg'),
     {
         reply_markup: {
             inline_keyboard: [
