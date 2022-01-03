@@ -150,14 +150,14 @@ bot.action('karhutla', (ctx)=>{
     ctx.replyWithPhoto(
         {
             source: download('https://inderaja.bmkg.go.id/IMAGE/HOTSPOT/Hotspot_Kalbar.png')
-        }),
+        },
     {
         reply_markup: {
             inline_keyboard: [
                 [{text: "MENU UTAMA", callback_data: "menu"}]
             ]
         }
-    } 
+    })
 })
 
 bot.action('maps', (ctx)=>{
@@ -176,9 +176,7 @@ bot.action('banjir', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI POTENSI BANJIR UNTUK TIGA HARI KEDEPAN')
     ctx.replyWithPhoto(
         {
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png'),
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png'),
-            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png'),
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_00.png','http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_24.png','http://web.meteo.bmkg.go.id/media/data/bmkg/ibfnew/20_kalbar_48.png')
             },
     {
         reply_markup: {
