@@ -25,7 +25,7 @@ if (jam < 12 ) {
 }
 
 const jamm = ["070000","100000","130000", "160000","190000"]
-var tgl = yy + mm + d.getUTCDate(); 
+var tgl = yy + mm + generateDatabaseDateTime(datenow); 
 
 var day = new Date();
 var nextDay = new Date(day);
