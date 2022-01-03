@@ -25,7 +25,6 @@ if (jam < 12 ) {
 }
 
 const jamm = ["070000","100000","130000", "160000","190000"]
-var tgl = yy + mm + tglplus; 
 
 var day = new Date();
 var nextDay = new Date(day);
@@ -48,6 +47,8 @@ function generateDatabaseDateTime(date) {
 
   return `${p.year}${p.month}${p.day}`;
 }
+
+var tgl = yy + mm + tglplus; 
 
 /////////////////////////////////////////////////////////////////////
 //                                                                 //
