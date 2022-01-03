@@ -157,7 +157,7 @@ bot.action('karhutla', (ctx)=>{
                 [{text: "MENU UTAMA", callback_data: "menu"}]
             ]
         }
-    }) 
+    } 
 })
 
 bot.action('maps', (ctx)=>{
