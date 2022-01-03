@@ -272,6 +272,7 @@ bot.action('angin', (ctx)=>{
         {
             source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+jam+'.jpg')
         },
+	    console.log('http://web.meteo.bmkg.go.id//media/data/bmkg/Angin3000ft/Streamline_'+tgl+jam+'.jpg'),
     {
         reply_markup: {
             inline_keyboard: [
