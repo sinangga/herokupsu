@@ -16,7 +16,13 @@ if (d.getUTCMonth() <= 8) {
   	var mm = 1+d.getUTCMonth()
     var mm = mm.toString ();
 }
-
+if (d.getUTCDate() <= 9) {
+	var dd = "0"+ d.getUTCDate()
+  var dd = dd.toString ();
+} else {
+  	var dd = d.getUTCDate();
+}
+var ddsiang = yy+mm+dd;
 var jam = d.getUTCHours()
 if (jam < 12 ) {
     jam = "070000";
@@ -25,6 +31,7 @@ if (jam < 12 ) {
 }
 
 const jamm = ["070000","100000","130000", "160000","190000"]
+const jamsiang = ["130000", "160000","190000","220000"]
 
 var day = new Date();
 var nextDay = new Date(day);
@@ -73,7 +80,8 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
+                [{text: "BAHAN TAFOR 23.00 UTC 📈🌤", callback_data: "tafor"}],
+                [{text: "BAHAN TAFOR 05.00 UTC 📈🌤", callback_data: "taforsiang"}],
                 [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
@@ -95,8 +103,9 @@ bot.action("menu", (ctx)=>{
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
-                [{text: "BAHAN TAFOR 📈🌤", callback_data: "tafor"}],
-		[{text: "BULETIN 📖", callback_data: "buletin"}],
+                [{text: "BAHAN TAFOR PAGI 📈🌤", callback_data: "tafor"}],
+                [{text: "BAHAN TAFOR SIANG 📈🌤", callback_data: "taforsiang"}],
+		        [{text: "BULETIN 📖", callback_data: "buletin"}],
 		        [{text: "INFO SELENGKAPNYA HUBUNGI ADMIN", callback_data: "chatad"}]
             ]
         }
@@ -187,6 +196,10 @@ bot.action('banjir', (ctx)=>{
     }) 
 })
 
+
+///////////////////////////////////////////
+// ACTION UNTUK TAFOR PAGI
+///////////////////////////////////////////
 bot.action('rainrate', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN RAINRATE TIAP-TIAP JAM')
     for (const tgl1 in jamm) {  
@@ -238,6 +251,73 @@ bot.action('kelembapan', (ctx)=>{
     }
 })
 
+///////////////////////////////////////////
+// ACTION UNTUK TAFOR SIANG
+///////////////////////////////////////////
+bot.action('rainratesiang', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN RAINRATE TIAP-TIAP JAM')
+    for (const tglsiang in jamsiang) {  
+        ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+ddsiang+`${jamsiang[tglsiang]}`+'.png')
+            });
+    ctx.replyWithPhoto(
+        {
+            source: download('http://web.meteo.bmkg.go.id/media/data/bmkg/mfy/wrf/prakiraan/RAIN/rainrate_wrf10km_sfc_'+tglplus+'010000.png')
+        },
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: "MENU UTAMA", callback_data: "menu"}]
+                ]
+            }
+        }) 
+    }
+})
+
+bot.action('suhusiang', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN SUHU UDARA')
+    for (const tglsiang in jamsiang) {  
+        ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/TEMP/temp_ifs0p125_2m_'+ddsiang+`${jamsiang[tglsiang]}`+'.png')
+            });
+    ctx.replyWithPhoto(
+        {
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/TEMP/temp_ifs0p125_2m_'+tglplus+'010000.png')
+        },
+    {
+        reply_markup: {
+            inline_keyboard: [
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    }) 
+    }
+})
+
+bot.action('kelembapansiang', (ctx)=>{
+    ctx.reply('BERIKUT ADALAH INFORMASI PRAKIRAAN KELEMBAPAN UDARA')
+    for (const tglsiang in jamsiang) {  
+        ctx.replyWithPhoto(
+            {
+                source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/RH/rh_ifs0p125_2m_'+ddsiang+`${jamsiang[tglsiang]}`+'.png')
+            }),
+    ctx.replyWithPhoto(
+        {
+            source: download('http://web.meteo.bmkg.go.id//media/data/bmkg/mfy/ecmwf/prakiraan/Backup/RH/rh_ifs0p125_2m_'+tglplus+'010000.png')
+        },
+        {
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: "MENU UTAMA", callback_data: "menu"}]
+                ]
+            }
+        }) 
+    }
+})
+
+
 bot.action('cthtafor', (ctx)=>{
     ctx.reply("BERIKUT ADALAH CONTOH LAPORAN TAFOR \n ========================\nTAF WIOP 302300Z\n3100/3112 26003KT 7000 SCT013 TEMPO 3108/3110 FEW012CB SCT013=\n========================\nTAF WIOP 310500Z\nTAF WIOP 310500Z 3106/3118 15003KT 6000 SCT012 TEMPO 3109/3111 FEW011CB SCT012=\n========================\nTAF WIOP 311100Z\n3112/3124 00000KT 8000 SCT013 TEMPO 3112/3115 4000 TSRA FEW011CB BKN012=",
     {
@@ -262,6 +342,18 @@ bot.action('tafor', (ctx)=>{
     }) 
 })
 
+bot.action('taforsiang', (ctx)=>{
+    ctx.reply("PILIH PARAMETER CUACA YANG ANDA INGINKAN",
+    {
+        reply_markup: {
+            inline_keyboard: [
+		[{text: "RAINRATE", callback_data: "rainratesiang"}, {text: "SUHU", callback_data: "suhusiang"}, {text: "KELEMBAPAN", callback_data: "kelembapansiang"}],
+                [{text: "CONTOH TAFOR", callback_data: "cthtafor"}],
+                [{text: "MENU UTAMA", callback_data: "menu"}]
+            ]
+        }
+    }) 
+})
 
 bot.action('angin', (ctx)=>{
     ctx.reply('BERIKUT ADALAH INFORMASI STREAMLINE ANGIN')
