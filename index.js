@@ -78,6 +78,7 @@ bot.start((ctx) => ctx.replyWithPhoto({ source : 'PANGSUMA.jpg' },
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
+		[{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BAHAN TAFOR 23.00 UTC 📈🌤", callback_data: "tafor"}],
@@ -101,6 +102,7 @@ bot.action("menu", (ctx)=>{
         reply_markup: {
             inline_keyboard: [
                 [{text: "KEBAKARAN HUTAN DAN LAHAN 🔥", callback_data: "karhutla"}],
+		[{text: "SEBARAN TITIK PANAS KAPUAS HULU 📍🔥", callback_data: "maps"}],
                 [{text: "POTENSI BANJIR HARIAN 🌊", callback_data: "banjir"}],
                 [{text: "SATELIT 🛰", callback_data: "satelit"}, {text: "RADAR 📡", callback_data: "radar"}, {text: "ANGIN 🌪", callback_data: "angin"}],
                 [{text: "BAHAN TAFOR PAGI 📈🌤", callback_data: "tafor"}],
